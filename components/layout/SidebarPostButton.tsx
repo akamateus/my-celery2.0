@@ -4,13 +4,13 @@ import { PiPencilSimpleLineFill } from "react-icons/pi";
 const SidebarPostButton = () => {
   const router = useRouter();
   return (
-    // For Pc screens
+    // phone
     <div onClick={() => router.push("/")}>
       <div
         className="
     mt-6
     lg:hidden
-    rounded-full
+    rounded-lg
     h-14
     w-14
     p-4
@@ -25,7 +25,7 @@ const SidebarPostButton = () => {
       >
         <PiPencilSimpleLineFill size={24} color="white" />
       </div>
-      {/* For phone */}
+      {/* pc */}
       <div
         className="
       mt-6
@@ -33,7 +33,7 @@ const SidebarPostButton = () => {
       lg:block
       px-4
       py-2
-      rounded-full
+      rounded-lg
       bg-green-500
       hover:bg-opacity-90
       cursor-pointer
