@@ -6,7 +6,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "celery-lined": "url('/svgs/CeleryIcon.svg')",
+        "celery-bg": "url('/svgs/CeleryLined.png')",
+      },
+    },
   },
   plugins: [],
 };
