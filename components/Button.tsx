@@ -27,7 +27,7 @@ const Button: React.FC<ButtonProps> = ({
         className={`
     disabled:opacity-70
     disabled:cursor-not-allowed
-    rounded-full
+    rounded-md
     font-semibold
     hover:opacity-80
     transition
