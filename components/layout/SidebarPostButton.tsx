@@ -1,11 +1,20 @@
 import { useRouter } from "next/router";
+import { useCallback } from "react";
 import { PiPencilSimpleLineFill } from "react-icons/pi";
+
+import useLoginModal from "@/hooks/useLoginModal";
 
 const SidebarPostButton = () => {
   const router = useRouter();
+  const loginModal = useLoginModal();
+
+  const onClick = useCallback(() => {
+    loginModal.onOpen();
+  }, [loginModal]);
+
   return (
     // phone
-    <div onClick={() => router.push("/")}>
+    <div onClick={onClick}>
       <div
         className="
     mt-6

@@ -1,42 +1,56 @@
 import useLoginModal from "@/hooks/useLoginModal";
-import useRegisterModal from "@/hooks/useRegisterModal";
 import { useCallback, useState } from "react";
+import useRegisterModal from "@/hooks/useRegisterModal";
 
 import Input from "../Input";
 import Modal from "../Modal";
 
-const LoginModal = () => {
+const RegisterModal = () => {
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // Toggle from sign in to register
+  // Toggle from Register to sign in
   const onToggle = useCallback(() => {
     if (isLoading) {
       return;
     }
-    loginModal.onClose();
-    registerModal.onOpen();
+    registerModal.onClose();
+    loginModal.onOpen();
   }, [isLoading, registerModal, loginModal]);
 
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
-      // todo - add login
+      // todo - register and login
 
-      loginModal.onClose();
+      registerModal.onClose();
     } catch (error) {
       console.log(error);
     } finally {
       setIsLoading(false);
     }
-  }, [loginModal]);
+  }, [registerModal]);
 
   const bodyContent = (
     <div className=" flex flex-col gap-4">
+      <Input
+        placeholder="name"
+        onChange={(e) => setName(e.target.value)}
+        value={name}
+        disabled={isLoading}
+      />
+      <Input
+        placeholder="Username"
+        onChange={(e) => setUsername(e.target.value)}
+        value={username}
+        disabled={isLoading}
+      />
       <Input
         placeholder="email"
         onChange={(e) => setEmail(e.target.value)}
@@ -58,7 +72,7 @@ const LoginModal = () => {
     "
     >
       <p>
-        Wanna gossip💅🏽?
+        Have an account?
         <span
           onClick={onToggle}
           className="
@@ -68,7 +82,7 @@ const LoginModal = () => {
       "
         >
           {" "}
-          Register here
+          Sign in{" "}
         </span>
       </p>
     </div>
@@ -76,10 +90,10 @@ const LoginModal = () => {
   return (
     <Modal
       disabled={isLoading}
-      isOpen={loginModal.isOpen}
-      title="Login✍🏽"
-      actionLabel="Sign in🥒"
-      onClose={loginModal.onClose}
+      isOpen={registerModal.isOpen}
+      title="Join the best Spiced Club"
+      actionLabel="Register🌶️"
+      onClose={registerModal.onClose}
       onSubmit={onSubmit}
       body={bodyContent}
       footer={footerContent}
@@ -87,4 +101,4 @@ const LoginModal = () => {
   );
 };
 
-export default LoginModal;
+export default RegisterModal;
