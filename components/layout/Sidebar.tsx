@@ -1,11 +1,17 @@
 import { AiFillNotification } from "react-icons/ai";
 import { PiHouseFill, PiUserFill } from "react-icons/pi";
 import { BiSolidLogOut } from "react-icons/bi";
+import { signOut } from "next-auth/react";
+
+import useCurrentUser from "@/hooks/useCurrentUser";
+
 import SidebarLogo from "./SidebarLogo";
 import SidebarItem from "./SidebarItem";
 import SidebarPostButton from "./SidebarPostButton";
 
 const Sidebar = () => {
+  const { data: currentUser } = useCurrentUser();
+
   const items = [
     {
       label: "Home",
@@ -16,11 +22,13 @@ const Sidebar = () => {
       label: "Notifications",
       href: "/notifications",
       icon: AiFillNotification,
+      auth: true,
     },
     {
       label: "Profile",
       href: "/users/123",
       icon: PiUserFill,
+      auth: true,
     },
   ];
   return (
@@ -34,9 +42,16 @@ const Sidebar = () => {
               href={item.href}
               label={item.label}
               icon={item.icon}
+              auth={item.auth}
             />
           ))}
-          <SidebarItem onClick={() => {}} icon={BiSolidLogOut} label="Logout" />
+          {currentUser && (
+            <SidebarItem
+              onClick={() => signOut()}
+              icon={BiSolidLogOut}
+              label="Logout"
+            />
+          )}
           <SidebarPostButton />
         </div>
       </div>
