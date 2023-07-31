@@ -24,9 +24,9 @@ const Sidebar = () => {
     },
   ];
   return (
-    <div className="col-span-1 h-full pr-4 md:pr-6">
-      <div className="flex flex-col items-end">
-        <div className="space-y-2 lg:w-[230px]">
+    <div className=" pt-6 col-span-1 h-full pr-4 md:pr-6">
+      <div className=" flex flex-col items-end">
+        <div className=" space-y-2 lg:w-[230px]">
           <SidebarLogo />
           {items.map((item) => (
             <SidebarItem

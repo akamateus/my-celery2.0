@@ -1,16 +1,25 @@
 import { useRouter } from "next/router";
+import { useCallback } from "react";
 import { PiPencilSimpleLineFill } from "react-icons/pi";
+
+import useLoginModal from "@/hooks/useLoginModal";
 
 const SidebarPostButton = () => {
   const router = useRouter();
+  const loginModal = useLoginModal();
+
+  const onClick = useCallback(() => {
+    loginModal.onOpen();
+  }, [loginModal]);
+
   return (
-    // For Pc screens
-    <div onClick={() => router.push("/")}>
+    // phone
+    <div onClick={onClick}>
       <div
         className="
     mt-6
     lg:hidden
-    rounded-full
+    rounded-lg
     h-14
     w-14
     p-4
@@ -25,7 +34,7 @@ const SidebarPostButton = () => {
       >
         <PiPencilSimpleLineFill size={24} color="white" />
       </div>
-      {/* For phone */}
+      {/* pc */}
       <div
         className="
       mt-6
@@ -33,7 +42,7 @@ const SidebarPostButton = () => {
       lg:block
       px-4
       py-2
-      rounded-full
+      rounded-lg
       bg-green-500
       hover:bg-opacity-90
       cursor-pointer

@@ -15,10 +15,11 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
 }) => {
   return (
     <div className="flex flex-row items-center">
+      {/* phone */}
       <div
         className="
     relative
-    rounded-full
+    rounded-lg
     h-14
     w-14
     flex
@@ -42,7 +43,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
       items-center
       gap-4
       p-4
-      rounded-full
+      rounded-lg
       hover:bg-slate-300
       hover:bg-opacity-10
       cursor-pointer

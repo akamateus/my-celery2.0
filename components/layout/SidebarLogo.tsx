@@ -8,10 +8,10 @@ const SidebarLogo = () => {
     <div
       onClick={() => router.push("/")}
       className="
-    rounded-full
+      rounded-lg
     h-16
     w-16
-    p-4
+    p-2
     flex
     items-center
     justify-center
