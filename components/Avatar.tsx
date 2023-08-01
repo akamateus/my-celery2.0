@@ -37,6 +37,7 @@ const Avatar: React.FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
     `}
     >
       <Image
+        priority
         fill
         sizes="100px"
         style={{
