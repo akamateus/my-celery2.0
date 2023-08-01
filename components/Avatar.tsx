@@ -38,6 +38,7 @@ const Avatar: React.FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
     >
       <Image
         fill
+        sizes="100px"
         style={{
           objectFit: "cover",
           borderRadius: "100%",
