@@ -6,16 +6,17 @@ import RegisterModal from "@/components/modals/RegisterModal";
 // import Modal from "@/components/Modal";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { Montserrat } from "@next/font/google";
+import { Quicksand } from "@next/font/google";
 
-const montserrat = Montserrat({
+// was montserrat
+const quicksand = Quicksand({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
 });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={montserrat.className}>
+    <main className={quicksand.className}>
       <SessionProvider session={pageProps.session}>
         <Toaster />
         <RegisterModal />
