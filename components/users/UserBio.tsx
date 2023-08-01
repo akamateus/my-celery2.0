@@ -61,7 +61,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
           mt-2
           text-stone-500"
           >
-            <GiFruitBowl color="green" size={24} />
+            <GiFruitBowl color="	limegreen" size={24} />
             <p>Joined {createdAt}</p>
           </div>
         </div>

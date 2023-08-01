@@ -24,9 +24,9 @@ const Avatar: React.FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
   );
 
   return (
+    // ${hasBorder ? "border-4 border-green-900" : ""}
     <div
       className={`
-    ${hasBorder ? "border-4 border-stone-900" : ""}
     ${isLarge ? "h-32" : "h-12"}
     ${isLarge ? "w-32" : "w-12"}
     rounded-full 
