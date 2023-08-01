@@ -2,9 +2,9 @@ import { format } from "date-fns";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useUser from "@/hooks/useUser";
 import { useMemo } from "react";
+import useEditModal from "@/hooks/useEditModal";
 import Button from "../Button";
 import { GiFruitBowl } from "react-icons/gi";
-import useEditModal from "@/hooks/useEditModal";
 
 interface UserBioProps {
   userId: string;
