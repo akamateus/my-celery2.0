@@ -87,6 +87,7 @@ const Modal: React.FC<ModalProps> = ({
             bg-stone-900 opacity-90
             outline-none
             focus:outline-none
+            rounded-lg
             "
           >
             {/* header */}
