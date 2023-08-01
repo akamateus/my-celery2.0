@@ -4,6 +4,7 @@ import useUser from "@/hooks/useUser";
 import { useMemo } from "react";
 import Button from "../Button";
 import { GiFruitBowl } from "react-icons/gi";
+import useEditModal from "@/hooks/useEditModal";
 
 interface UserBioProps {
   userId: string;
@@ -12,6 +13,8 @@ interface UserBioProps {
 const UserBio: React.FC<UserBioProps> = ({ userId }) => {
   const { data: currentUser } = useCurrentUser();
   const { data: fetchedUser } = useUser(userId);
+
+  const editModal = useEditModal();
 
   const createdAt = useMemo(() => {
     if (!fetchedUser?.createdAt) {
@@ -32,7 +35,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
     "
       >
         {currentUser?.id === userId ? (
-          <Button secondary label="Edit" onClick={() => {}} />
+          <Button secondary label="Edit" onClick={editModal.onOpen} />
         ) : (
           <Button onClick={() => {}} label="Connect" secondary />
         )}

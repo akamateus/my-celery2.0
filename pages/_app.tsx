@@ -7,6 +7,7 @@ import RegisterModal from "@/components/modals/RegisterModal";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Quicksand } from "@next/font/google";
+import EditModal from "@/components/modals/EditModal";
 
 // was montserrat
 const quicksand = Quicksand({
@@ -19,6 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <main className={quicksand.className}>
       <SessionProvider session={pageProps.session}>
         <Toaster />
+        <EditModal />
         <RegisterModal />
         <LoginModal />
         <Layout>
