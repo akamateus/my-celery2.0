@@ -51,6 +51,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     hover:bg-opacity-10
     cursor-pointer
     lg:hidden
+    
     "
       >
         <Icon size={28} color="white" />
@@ -67,6 +68,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
       hover:bg-slate-300
       hover:bg-opacity-10
       cursor-pointer
+      transition duration-300 ease-in-out hover:scale-110
       "
       >
         <Icon size={24} color="white" />

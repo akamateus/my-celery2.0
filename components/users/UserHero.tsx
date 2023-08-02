@@ -13,6 +13,7 @@ const UserHero: React.FC<UserHeroProps> = ({ userId }) => {
       <div className="bg-stone-700 h-44 relative  rounded-md">
         {fetchedUser?.coverImage && (
           <Image
+            className="rounded-md"
             src={fetchedUser.coverImage}
             fill
             alt="Cover Image"
