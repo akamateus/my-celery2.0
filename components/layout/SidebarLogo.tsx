@@ -21,7 +21,7 @@ const SidebarLogo = () => {
     cursor-pointer
     transition"
     >
-      <CeleryIcon size={28} color="green" />
+      <CeleryIcon size={28} color="mediumseagreen" />
     </div>
   );
 };

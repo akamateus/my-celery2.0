@@ -26,7 +26,13 @@ const FollowBar = () => {
   "
     >
       <div className="bg-stone-800 rounded-xl p-4">
-        <h2 className="text-white text-xl font-semibold">New On Celery </h2>
+        <h2 className="text-white text-xl text-center font-semibold">
+          New On{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+            {" "}
+            Celery{" "}
+          </span>
+        </h2>
         <div className="flex flex-col items-center gap-6 mt-4 bg-stone-700 pt-3 pb-3 rounded-md">
           {" "}
           {users.map((user: Record<string, any>) => (
