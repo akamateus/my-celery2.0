@@ -7,6 +7,7 @@ import { toast } from "react-hot-toast";
 import axios from "axios";
 import Modal from "../Modal";
 import Input from "../Input";
+import ImageUpload from "../ImageUpload";
 
 const EditModal = () => {
   const { data: currentUser } = useCurrentUser();
@@ -48,11 +49,11 @@ const EditModal = () => {
       });
       mutateFetchedUser();
 
-      toast.success("Updated 🎉");
+      toast.success("Updated");
 
       editModal.onClose();
     } catch (error) {
-      toast.error("Something went wrong 🤡");
+      toast.error("Something went wrong");
     } finally {
       setIsLoading(false);
     }
@@ -68,6 +69,20 @@ const EditModal = () => {
 
   const bodyContent = (
     <div className=" flex flex-col gap-4">
+      <ImageUpload
+        value={profileImage}
+        disabled={isLoading}
+        onChange={(image) => setProfileImage(image)}
+        label="Upload your image🪞"
+      />
+
+      <ImageUpload
+        value={coverImage}
+        disabled={isLoading}
+        onChange={(image) => setCoverImage(image)}
+        label="Upload your cover🖼️"
+      />
+
       <Input
         placeholder="name"
         onChange={(e) => setName(e.target.value)}
