@@ -1,8 +1,19 @@
 import useUsers from "@/hooks/useUsers";
 import Avatar from "../Avatar";
+import { BeatLoader } from "react-spinners";
 
 const FollowBar = () => {
-  const { data: users = [] } = useUsers();
+  const { data: users = [], isLoading } = useUsers();
+
+  //or h-full if have problems with the layout
+  //added isLoading like in userId
+  if (isLoading || !users) {
+    return (
+      <div className="flex justify-center items-center h-40">
+        <BeatLoader color="green" size={10} />
+      </div>
+    );
+  }
 
   if (users.length === 0) {
     return null;
