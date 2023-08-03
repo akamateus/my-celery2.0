@@ -34,8 +34,17 @@ const Sidebar = () => {
   return (
     <div className=" col-span-1 h-full pr-4 md:pr-4">
       <div className=" flex flex-col items-end ">
-        <div className=" space-y-2 lg:w-[230px] bg-stone-800  rounded-b-md p-4">
-          <SidebarLogo />
+        <div
+          className=" space-y-5 lg:w-[230px] bg-stone-800  rounded-b-md p-4 items-center
+    justify-center"
+        >
+          <div
+            className="flex cursor-pointer justify-center rounded-md transition duration-300 hover:scale-105
+    hover:bg-stone-400
+    hover:bg-opacity-10"
+          >
+            <SidebarLogo />
+          </div>
           {items.map((item) => (
             <SidebarItem
               key={item.href}

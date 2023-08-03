@@ -14,11 +14,8 @@ const SidebarLogo = () => {
     flex
     items-center
     justify-center
-    transition duration-300 ease-in-out hover:scale-110
-    hover:bg-slate-400
-    hover:bg-opacity-10
-    cursor-pointer
-    transition"
+    transition duration-300
+    cursor-pointer"
     >
       <CeleryIcon size={28} color="#22C55E" />
     </div>

@@ -33,6 +33,7 @@ const FollowBar = () => {
             {" "}
             Celery{" "}
           </span>
+          🎉
         </h2>
         <div className="flex flex-col items-left gap-4 mt-4   rounded-md">
           {" "}
