@@ -10,7 +10,7 @@ const FollowBar = () => {
   if (isLoading || !users) {
     return (
       <div className="flex justify-center items-center h-40">
-        <BeatLoader color="green" size={10} />
+        <BeatLoader color="#22C55E" size={10} />
       </div>
     );
   }
