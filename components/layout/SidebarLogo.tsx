@@ -15,7 +15,7 @@ const SidebarLogo = () => {
     items-center
     justify-center
     transition duration-300 ease-in-out hover:scale-110
-    hover:bg-slate-400
+    hover:bg-stone-400
     hover:bg-opacity-10
     cursor-pointer
     transition"

@@ -17,7 +17,7 @@ const SidebarPostButton = () => {
     <div onClick={onClick}>
       <div
         className="
-    mt-6
+    
     lg:hidden
     rounded-md
     h-14
@@ -30,6 +30,7 @@ const SidebarPostButton = () => {
     hover:bg-opacity-80
     transition
     cursor-pointer
+    m-1
     "
       >
         <PiPencilSimpleLineFill size={24} color="white" />
