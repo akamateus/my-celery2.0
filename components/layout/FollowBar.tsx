@@ -33,13 +33,13 @@ const FollowBar = () => {
             Celery{" "}
           </span>
         </h2>
-        <div className="flex flex-col items-center gap-6 mt-4 bg-stone-700 pt-3 pb-3 rounded-md">
+        <div className="flex flex-col items-left gap-4 mt-4   rounded-md">
           {" "}
           {users.map((user: Record<string, any>) => (
             <div
               key={user.id}
               className="
-        flex flex-row gap-4
+        flex flex-row gap-4 bg-stone-700 rounded-md p-2
         "
             >
               <Avatar userId={user.id} />

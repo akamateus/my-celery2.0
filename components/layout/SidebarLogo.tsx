@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import { BsTwitter } from "react-icons/bs";
 import { CeleryIcon } from "../svgs";
 
 const SidebarLogo = () => {
@@ -21,7 +20,7 @@ const SidebarLogo = () => {
     cursor-pointer
     transition"
     >
-      <CeleryIcon size={28} color="mediumseagreen" />
+      <CeleryIcon size={28} color="#22C55E" />
     </div>
   );
 };
