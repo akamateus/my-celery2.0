@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({ label, showBackArrow }) => {
   }, [router]);
 
   return (
-    <div className="border-b-[1px] border-stone-800 p-5">
+    <div className="bg-stone-800 p-4 rounded-b-md mb-4 ">
       <div className="flex flex-row items-center pag-2 ">
         {showBackArrow && (
           <BiArrowBack

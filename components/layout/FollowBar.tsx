@@ -22,10 +22,11 @@ const FollowBar = () => {
   return (
     <div
       className="
-  px-6 py-4 hidden lg:block
+  px-4 hidden lg:block
   "
+      //py-4
     >
-      <div className="bg-stone-800 rounded-xl p-4">
+      <div className="bg-stone-800 rounded-b-md p-4">
         <h2 className="text-white text-xl text-center font-semibold">
           New On{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">

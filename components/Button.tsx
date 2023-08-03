@@ -40,10 +40,11 @@ const Button: React.FC<ButtonProps> = ({
     ${large ? "text-xl" : "text-md"}
     ${large ? "px-5" : "px-4"}
     ${large ? "py-3" : "py-2"}
-    ${outline ? "bg-transparent" : ""}
-    ${outline ? "border-white" : ""}
+    ${outline ? "bg-green-500" : ""}
     ${outline ? "text-white" : ""}
+    
     `}
+        // ${outline ? "border-white" : ""}
       >
         {label}
       </button>

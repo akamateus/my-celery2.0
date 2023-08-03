@@ -19,7 +19,7 @@ const SidebarPostButton = () => {
         className="
     mt-6
     lg:hidden
-    rounded-lg
+    rounded-md
     h-14
     w-14
     p-4
@@ -42,7 +42,7 @@ const SidebarPostButton = () => {
       lg:block
       px-4
       py-2
-      rounded-lg
+      rounded-md
       bg-green-500
       hover:bg-opacity-90
       cursor-pointer

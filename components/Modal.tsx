@@ -87,7 +87,7 @@ const Modal: React.FC<ModalProps> = ({
             bg-stone-900 opacity-90
             outline-none
             focus:outline-none
-            rounded-lg
+            rounded-md
             "
           >
             {/* header */}
@@ -97,7 +97,7 @@ const Modal: React.FC<ModalProps> = ({
               items-center
               justify-between
               p-10
-              rounded-t
+              rounded-md
             "
             >
               <h3

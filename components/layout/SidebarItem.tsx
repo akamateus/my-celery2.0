@@ -39,7 +39,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
       <div
         className="
     relative
-    rounded-lg
+    rounded-md
     h-14
     w-14
     flex
@@ -64,7 +64,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
       items-center
       gap-4
       p-4
-      rounded-lg
+      rounded-md
       hover:bg-slate-300
       hover:bg-opacity-10
       cursor-pointer

@@ -53,7 +53,7 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
   cursor-pointer
   hover:bg-stone-700
   transition
-  rounded-xl
+  rounded-md
   my-4
   bg-stone-800
 
