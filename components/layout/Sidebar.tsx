@@ -38,7 +38,13 @@ const Sidebar = () => {
           className=" space-y-5 lg:w-[230px] bg-stone-800  rounded-b-md p-4 items-center
     justify-center"
         >
-          <SidebarLogo />
+          <div
+            className="flex cursor-pointer justify-center rounded-md transition duration-300 hover:scale-105
+    hover:bg-stone-400
+    hover:bg-opacity-10"
+          >
+            <SidebarLogo />
+          </div>
           {items.map((item) => (
             <SidebarItem
               key={item.href}
