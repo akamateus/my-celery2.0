@@ -5,6 +5,7 @@ import { useMemo } from "react";
 import useEditModal from "@/hooks/useEditModal";
 import Button from "../Button";
 import { GiFruitBowl } from "react-icons/gi";
+import useFollow from "@/hooks/useFollow";
 
 interface UserBioProps {
   userId: string;
@@ -15,6 +16,8 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
   const { data: fetchedUser } = useUser(userId);
 
   const editModal = useEditModal();
+
+  const { isFollowing, toggleFollow } = useFollow(userId);
 
   const createdAt = useMemo(() => {
     if (!fetchedUser?.createdAt) {
@@ -37,7 +40,12 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
         {currentUser?.id === userId ? (
           <Button secondary label="Edit" onClick={editModal.onOpen} />
         ) : (
-          <Button onClick={() => {}} label="Connect" secondary />
+          <Button
+            onClick={toggleFollow}
+            label={isFollowing ? "Connected" : "Connect"}
+            outline={!isFollowing}
+            secondary={isFollowing}
+          />
         )}
       </div>
       <div className="mt-5 px-4">
@@ -71,7 +79,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
         <div className="flex flex-row items-center mt-4 gap-6">
           <div className="flex flex-row items-center gap-1">
             <p className="text-white">{fetchedUser?.followingIds?.length}</p>
-            <p className="text-stone-500"> Connections</p>
+            <p className="text-stone-500"> Following</p>
           </div>
           <div className="flex flex-row items-center gap-1">
             <p className="text-white">{fetchedUser?.followersCount || 0}</p>

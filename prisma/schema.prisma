@@ -39,6 +39,7 @@ model Post {
   updatedAt DateTime @updatedAt
   userId String @db.ObjectId
   likeIds String[] @db.ObjectId
+  //typo above, must be liked but now is like aushdapiudahdua
 
   user User @relation(fields: [userId], references: [id], onDelete:Cascade)
 

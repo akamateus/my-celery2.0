@@ -18,7 +18,7 @@ const UserView = () => {
   if (isLoading || !fetchedUser) {
     return (
       <div className="flex justify-center items-center h-full">
-        <BeatLoader color="green" size={20} />
+        <BeatLoader color="#22C55E" size={20} />
       </div>
     );
   }
