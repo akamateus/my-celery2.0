@@ -4,7 +4,8 @@ import { formatDistanceToNowStrict } from "date-fns";
 import { useRouter } from "next/router";
 import React, { useCallback, useMemo } from "react";
 import Avatar from "../Avatar";
-import { BiCommentDetail, BiHeart } from "react-icons/bi";
+import { BiCommentDetail, BiHeart, BiSolidHeart } from "react-icons/bi";
+import useLike from "@/hooks/useLike";
 
 interface PostItemProps {
   data: Record<string, any>;
@@ -16,6 +17,7 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
   const loginModal = useLoginModal();
 
   const { data: currentUser } = useCurrentUser();
+  const { hasLiked, toggleLike } = useLike({ postId: data.id, userId });
 
   const goToUser = useCallback(
     (event: any) => {
@@ -33,9 +35,14 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
   const onLike = useCallback(
     (event: any) => {
       event.stopPropagation();
-      loginModal.onOpen();
+
+      if (!currentUser) {
+        loginModal.onOpen();
+      }
+
+      toggleLike();
     },
-    [loginModal]
+    [loginModal, currentUser, toggleLike]
   );
 
   const createdAt = useMemo(() => {
@@ -44,6 +51,8 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
     }
     return formatDistanceToNowStrict(new Date(data.createdAt));
   }, [data?.createdAt]);
+
+  const LikeIcon = hasLiked ? BiSolidHeart : BiHeart;
 
   return (
     <div
@@ -109,8 +118,8 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
             hover:text-red-500
             "
             >
-              <BiHeart size={20} />
-              <p className="text-xs">{data.comments?.length || 0}</p>
+              <LikeIcon size={20} color={hasLiked ? "#EF4444" : ""} />
+              <p className="text-xs">{data.likeIds.length}</p>
             </div>
           </div>
         </div>
