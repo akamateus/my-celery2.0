@@ -36,7 +36,7 @@ const Button: React.FC<ButtonProps> = ({
     ${fullWidth ? "w-full" : "w-fit"}
     ${secondary ? "bg-green-50" : "bg-green-500"}
     ${secondary ? "text-black" : "text-white"}
-    ${secondary ? "border-black" : "border-green-500"}
+    ${secondary ? "border-stone-800" : "border-green-500"}
     ${large ? "text-xl" : "text-md"}
     ${large ? "px-5" : "px-4"}
     ${large ? "py-3" : "py-2"}
@@ -45,6 +45,7 @@ const Button: React.FC<ButtonProps> = ({
     
     `}
         // ${outline ? "border-white" : ""}
+        // ${secondary ? "border-black" : "border-green-500"}
       >
         {label}
       </button>

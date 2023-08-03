@@ -46,10 +46,10 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
   return (
     <div
       className="
-  border-b-[1px] border-t-[1px] border-stone-700 px-6 "
+  border-b-[1px] border-t-[1px] border-stone-600 px-4 "
     >
       {currentUser ? (
-        <div className="flex flex-row gap-4 bg-stone-800 rounded-md pt-4 pl-4 my-4">
+        <div className="flex flex-row gap-4 bg-stone-900 border border-stone-600 rounded-md pt-4 pl-4 my-4">
           <div>
             <Avatar userId={currentUser?.id} />
           </div>
@@ -65,7 +65,8 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
               mt-1
               mb-2
               w-full
-              bg-stone-800
+              bg-stone-900
+
               ring-0
               outline-none
               text-[16px]

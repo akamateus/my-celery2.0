@@ -4,7 +4,7 @@ import useUser from "@/hooks/useUser";
 import { useMemo } from "react";
 import useEditModal from "@/hooks/useEditModal";
 import Button from "../Button";
-import { GiFruitBowl } from "react-icons/gi";
+import { TbCalendarCheck } from "react-icons/tb";
 import useFollow from "@/hooks/useFollow";
 
 interface UserBioProps {
@@ -29,24 +29,26 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
   return (
     <div
       className="
-  border-b-[1px] border-stone-800 pb-4
+   border-stone-600 pb-4 border  rounded-md mt-4 
   "
     >
       <div
         className="
-        flex justify-end pt-3
+        flex justify-end pt-2 pb-2 bg-stone-800 rounded-t-md
     "
       >
-        {currentUser?.id === userId ? (
-          <Button secondary label="Edit" onClick={editModal.onOpen} />
-        ) : (
-          <Button
-            onClick={toggleFollow}
-            label={isFollowing ? "Connected" : "Connect"}
-            outline={!isFollowing}
-            secondary={isFollowing}
-          />
-        )}
+        <div className="mr-2">
+          {currentUser?.id === userId ? (
+            <Button secondary label="Edit" onClick={editModal.onOpen} />
+          ) : (
+            <Button
+              onClick={toggleFollow}
+              label={isFollowing ? "Connected" : "Connect"}
+              outline={!isFollowing}
+              secondary={isFollowing}
+            />
+          )}
+        </div>
       </div>
       <div className="mt-5 px-4">
         <div className="flex flex-col">
@@ -72,7 +74,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
           mt-2
           text-stone-500"
           >
-            <GiFruitBowl color="#22C55E" size={24} />
+            <TbCalendarCheck color="#22C55E" size={24} />
             <p>Joined {createdAt}</p>
           </div>
         </div>
