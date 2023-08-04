@@ -36,26 +36,26 @@ const CommentItem: React.FC<CommentItemProps> = ({ data }) => {
   transition
   "
     >
-      <div className="flex flex-row items-start gap-3">
+      <div className="flex flex-row items-start gap-4">
         <Avatar userId={data.user.id} />
         <div>
           <div className="flex flex-row items-center gap-2">
             <p
               onClick={goToUser}
-              className="text-white font-semibold cursor-pointer "
+              className="text-white font-semibold cursor-pointer"
             >
               {data.user.name}
             </p>
             <span
               className="
-            text-stone-500 cursor-pointer hover:text-green-500 transition hidden md:block
+              text-stone-500 cursor-pointer hover:text-green-500 transition hidden md:block
             "
             >
               @{data.user.username}
             </span>
             <span className="text-stone-500 text-xs">{createdAt}</span>
           </div>
-          <div className="text-white mt-1">{data.body}</div>
+          <div className="text-white mt-1 break-all">{data.body}</div>
         </div>
       </div>
     </div>
