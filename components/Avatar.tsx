@@ -24,23 +24,21 @@ const Avatar: React.FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
   );
 
   return (
-    // ${hasBorder ? "border-4 border-green-900" : ""}
     <div
       className={`
     ${isLarge ? "h-32" : "h-12"}
     ${isLarge ? "w-32" : "w-12"}
+    ${hasBorder ? "border border-stone-500" : ""}
     rounded-full 
     hover:opacity-90 
     transition 
     cursor-pointer
     relative
-    border border-green-500
     `}
     >
       <Image
         priority
         fill
-        sizes="100px"
         style={{
           objectFit: "cover",
           borderRadius: "100%",

@@ -69,28 +69,29 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
   
   "
     >
-      <div className="flex flex-row items-start gap-3">
-        <Avatar userId={data.user.id} />
-        <div>
-          <div className=" flex flex-row items-center gap-2">
-            <p
-              onClick={goToUser}
-              className=" text-white font-semibold cursor-pointer"
-            >
-              {data.user.name}
-            </p>
-            <span
-              onClick={goToUser}
-              className="text-stone-500 cursor-pointer hover:text-green-500 transition hidden md:block"
-            >
-              @{data.user.username}
-            </span>
-            <span className="text-stone-500 text-xs">{createdAt}</span>
-          </div>
-          <div className="text-white mt-1">{data.body}</div>
-          <div className=" flex flex-row items-center mt-3 gap-10 ">
-            <div
-              className="
+      <div>
+        <div className="flex flex-row items-start gap-4">
+          <Avatar userId={data.user.id} />
+          <div>
+            <div className=" flex flex-row items-center gap-2">
+              <p
+                onClick={goToUser}
+                className=" text-white font-semibold cursor-pointer"
+              >
+                {data.user.name}
+              </p>
+              <span
+                onClick={goToUser}
+                className="text-stone-500 cursor-pointer hover:text-green-500 transition hidden md:block"
+              >
+                @{data.user.username}
+              </span>
+              <span className="text-stone-500 text-xs">{createdAt}</span>
+            </div>
+            <div className="text-white mt-1">{data.body}</div>
+            <div className=" flex flex-row items-center mt-3 gap-10 ">
+              <div
+                className="
             flex 
             flex-row
             items-center
@@ -100,14 +101,14 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
             transition
             hover:text-green-500
             "
-            >
-              <BiCommentDetail size={20} />
-              <p className="text-xs">{data.comments?.length || 0}</p>
-            </div>
+              >
+                <BiCommentDetail size={20} />
+                <p className="text-xs">{data.comments?.length || 0}</p>
+              </div>
 
-            <div
-              onClick={onLike}
-              className="
+              <div
+                onClick={onLike}
+                className="
             flex 
             flex-row
             items-center
@@ -117,9 +118,10 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
             transition
             hover:text-red-500
             "
-            >
-              <LikeIcon size={20} color={hasLiked ? "#EF4444" : ""} />
-              <p className="text-xs">{data.likeIds.length}</p>
+              >
+                <LikeIcon size={20} color={hasLiked ? "#EF4444" : ""} />
+                <p className="text-xs">{data.likeIds.length}</p>
+              </div>
             </div>
           </div>
         </div>
