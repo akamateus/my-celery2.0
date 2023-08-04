@@ -3,7 +3,7 @@ import React, { useCallback } from "react";
 import { IconType } from "react-icons";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useLoginModal from "@/hooks/useLoginModal";
-import { BsDot } from "react-icons/bs";
+import { BiSolidSquareRounded } from "react-icons/bi";
 
 interface SidebarItemProps {
   label: string;
@@ -59,7 +59,10 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
       >
         <Icon size={28} color="#a8a29e" />
         {alert ? (
-          <BsDot className="text-green-500 absolute -stop-4 left-0" size={70} />
+          <BiSolidSquareRounded
+            className="text-green-500 absolute top-4 left-7"
+            size={15}
+          />
         ) : null}
       </div>
       <div
@@ -80,7 +83,10 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
         <Icon size={24} color="#a8a29e" />
         <p className=" hidden lg:block text-stone-400 text-xl">{label}</p>
         {alert ? (
-          <BsDot className="text-green-500 absolute -stop-4 left-0" size={70} />
+          <BiSolidSquareRounded
+            className="text-green-500 absolute top-4 left-7"
+            size={15}
+          />
         ) : null}
       </div>
     </div>
