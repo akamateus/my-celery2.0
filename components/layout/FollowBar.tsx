@@ -28,12 +28,11 @@ const FollowBar = () => {
     >
       <div className="bg-stone-800 rounded-b-md p-4">
         <h2 className="text-white text-xl text-center font-semibold">
-          New On{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
             {" "}
             Celery{" "}
           </span>
-          🎉
+          people
         </h2>
         <div className="flex flex-col items-left gap-4 mt-4   rounded-md">
           {" "}
