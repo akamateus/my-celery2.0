@@ -35,7 +35,7 @@ const SidebarPostButton = () => {
     hover:bg-opacity-80
     transition
     cursor-pointer
-    m-1
+    m-2
     "
       >
         <PiPencilSimpleLineFill size={24} color="white" />
