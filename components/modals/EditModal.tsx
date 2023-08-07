@@ -69,13 +69,14 @@ const EditModal = () => {
 
   const bodyContent = (
     <div className=" flex flex-col gap-4">
+      <h1 className="text-white font-semibold">Edit your image:</h1>
       <ImageUpload
         value={profileImage}
         disabled={isLoading}
         onChange={(image) => setProfileImage(image)}
         label="Upload your image🪞"
       />
-
+      <h1 className="text-white font-semibold">Edit your cover:</h1>
       <ImageUpload
         value={coverImage}
         disabled={isLoading}
