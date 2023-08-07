@@ -3,14 +3,19 @@ import { useCallback } from "react";
 import { PiPencilSimpleLineFill } from "react-icons/pi";
 
 import useLoginModal from "@/hooks/useLoginModal";
+import useCurrentUser from "@/hooks/useCurrentUser";
 
 const SidebarPostButton = () => {
   const router = useRouter();
   const loginModal = useLoginModal();
+  const { data: currentUser } = useCurrentUser();
 
   const onClick = useCallback(() => {
-    loginModal.onOpen();
-  }, [loginModal]);
+    if (!currentUser) {
+      return loginModal.onOpen();
+    }
+    router.push("/");
+  }, [loginModal, router, currentUser]);
 
   return (
     // phone
@@ -30,7 +35,7 @@ const SidebarPostButton = () => {
     hover:bg-opacity-80
     transition
     cursor-pointer
-    m-1
+    m-2
     "
       >
         <PiPencilSimpleLineFill size={24} color="white" />
