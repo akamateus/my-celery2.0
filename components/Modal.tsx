@@ -58,6 +58,7 @@ const Modal: React.FC<ModalProps> = ({
     focus:outline-none
     bg-gradient-to-b from-green-300 to-transparent
     bg-opacity-70
+    
 
     "
       >
@@ -88,6 +89,7 @@ const Modal: React.FC<ModalProps> = ({
             outline-none
             focus:outline-none
             rounded-md
+          
             "
           >
             {/* header */}
@@ -116,6 +118,9 @@ const Modal: React.FC<ModalProps> = ({
               text-white
               hover:opacity-70
               transition
+              bg-stone-700
+              rounded-md
+
               "
               >
                 {" "}
