@@ -26,7 +26,7 @@ const FollowBar = () => {
   "
       //py-4
     >
-      <div className="bg-stone-800 rounded-b-md p-4">
+      <div className="bg-stone-800 rounded-b-md p-5 fixed pb-[500px]">
         <h2 className="text-white text-xl text-center font-semibold">
           <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
             {" "}

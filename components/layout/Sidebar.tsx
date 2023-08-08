@@ -30,13 +30,13 @@ const Sidebar = () => {
     },
   ];
   return (
-    <div className=" z-40 px-4 lg:block">
+    <div className=" z-40 px-4 lg:block ">
       <div>
         <div
-          className=" space-y-5 lg:w-[100px] bg-stone-800  rounded-b-md p-4 items-center
+          className=" fixed space-y-5 lg:w-[100px] bg-stone-800  rounded-b-md p-4 items-center pb-[500px]
     justify-center"
         >
-          <div className="flex cursor-pointer justify-center rounded-md ">
+          <div className=" flex cursor-pointer justify-center rounded-md ">
             <SidebarLogo />
           </div>
           {items.map((item) => (
