@@ -14,56 +14,46 @@ const Sidebar = () => {
 
   const items = [
     {
-      label: "Home",
       href: "/",
       icon: PiHouseFill,
     },
     {
-      label: "Notifications",
       href: "/notifications",
       icon: AiFillNotification,
       auth: true,
       alert: currentUser?.hasNotification,
     },
     {
-      label: "Profile",
       href: `/users/${currentUser?.id}`,
       icon: PiUserFill,
       auth: true,
     },
   ];
   return (
-    <div className=" col-span-1 h-full pr-4 md:pr-4">
-      <div className=" flex flex-col items-end ">
+    <div className=" z-40 px-4 lg:block">
+      <div>
         <div
-          className=" space-y-5 lg:w-[230px] bg-stone-800  rounded-b-md p-4 items-center
+          className=" space-y-5 lg:w-[100px] bg-stone-800  rounded-b-md p-4 items-center
     justify-center"
         >
-          <div
-            className="flex cursor-pointer justify-center rounded-md transition duration-300 hover:scale-105
-    hover:bg-stone-400
-    hover:bg-opacity-10"
-          >
+          <div className="flex cursor-pointer justify-center rounded-md ">
             <SidebarLogo />
           </div>
           {items.map((item) => (
             <SidebarItem
               key={item.href}
               href={item.href}
-              label={item.label}
               icon={item.icon}
               auth={item.auth}
               alert={item.alert}
             />
           ))}
           {currentUser && (
-            <SidebarItem
-              onClick={() => signOut()}
-              icon={BiSolidLogOut}
-              label="Logout"
-            />
+            <SidebarItem onClick={() => signOut()} icon={BiSolidLogOut} />
           )}
-          <SidebarPostButton />
+          <div className="flex cursor-pointer justify-center rounded-md ">
+            <SidebarPostButton />
+          </div>
         </div>
       </div>
     </div>

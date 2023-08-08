@@ -9,11 +9,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className="h-screen bg-stone-900">
       <div className="container h-full mx-auto xl:px-30 max-w-6xl">
         <div className="grid grid-cols-4 h-full">
-          <Sidebar />
+          <FollowBar />
           <div className=" col-span-3 lg:col-span-2  border-neutral-800">
             {children}
           </div>
-          <FollowBar />
+          <Sidebar />
         </div>
       </div>
     </div>

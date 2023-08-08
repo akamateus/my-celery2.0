@@ -6,7 +6,6 @@ import useLoginModal from "@/hooks/useLoginModal";
 import { BiSolidSquareRounded } from "react-icons/bi";
 
 interface SidebarItemProps {
-  label: string;
   href?: string;
   icon: IconType;
   onClick?: () => void;
@@ -14,7 +13,6 @@ interface SidebarItemProps {
   alert?: boolean;
 }
 const SidebarItem: React.FC<SidebarItemProps> = ({
-  label,
   href,
   icon: Icon,
   onClick,
@@ -37,7 +35,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   }, [router, onClick, href, currentUser, auth, loginModal]);
 
   return (
-    <div onClick={handleClick} className="flex flex-row items-center m-2">
+    <div onClick={handleClick} className="flex flex-col items-center">
       {/* phone */}
       <div
         className="
@@ -70,6 +68,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
       relative
       hidden
       lg:flex
+      justify-center
       items-center
       gap-4
       p-4
@@ -81,7 +80,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
       "
       >
         <Icon size={24} color="#a8a29e" />
-        <p className=" hidden lg:block text-stone-400 text-xl">{label}</p>
+
         {alert ? (
           <BiSolidSquareRounded
             className="text-green-500 absolute top-4 left-7"
