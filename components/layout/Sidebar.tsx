@@ -33,7 +33,7 @@ const Sidebar = () => {
     <div className=" z-40 px-4 lg:block">
       <div>
         <div
-          className=" space-y-5 lg:w-[100px] bg-stone-800  rounded-b-md p-4 items-center
+          className=" space-y-5 lg:w-[90px] bg-stone-800  rounded-b-md p-4 items-center
     justify-center"
         >
           <div className="flex cursor-pointer justify-center rounded-md ">
