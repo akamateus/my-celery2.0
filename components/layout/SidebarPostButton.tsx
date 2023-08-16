@@ -28,7 +28,8 @@ const SidebarPostButton = () => {
     h-14
     w-14
     p-4
-
+    flex
+    justify-center
     items-center
     justify-center
     bg-green-500
