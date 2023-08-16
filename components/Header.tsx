@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useCallback } from "react";
-import { BiArrowBack } from "react-icons/bi";
+import { MdArrowBackIosNew } from "react-icons/md";
 
 interface HeaderProps {
   label: string;
@@ -14,9 +14,9 @@ const Header: React.FC<HeaderProps> = ({ label, showBackArrow }) => {
 
   return (
     <div className="bg-stone-800 p-4 rounded-b-md mb-4 ">
-      <div className="flex flex-row items-center pag-2 ">
+      <div className="flex flex-row items-center justify-center space-x-4 ">
         {showBackArrow && (
-          <BiArrowBack
+          <MdArrowBackIosNew
             onClick={handleBack}
             color="white"
             size={20}
