@@ -29,7 +29,6 @@ const SidebarPostButton = () => {
     w-14
     p-4
     flex
-    justify-center
     items-center
     justify-center
     bg-green-500
@@ -44,31 +43,30 @@ const SidebarPostButton = () => {
       {/* pc */}
       <div
         className="
+      mt-6
+      hidden
+      lg:block
+      px-4
+      py-2
       rounded-md
-
-    flex
-    items-center
-    justify-center
-    transition duration-300
-    cursor-pointer
-    "
-      >
-        <div
-          className="
-        relative
-        hidden
-        lg:flex
-        justify-center
-        items-center
-        bg-green-500
-        p-4
-        rounded-md
-        cursor-pointer
-        transition duration-300 ease-in-out hover:scale-110
+      bg-green-500
+      hover:bg-opacity-90
+      cursor-pointer
+      transition
       "
+      >
+        <p
+          className="
+        hidden
+        lg:block
+        text-center
+        font-semibold
+        text-white
+        text-[20px]
+        "
         >
-          <PiPencilSimpleLineFill size={24} color="white" />
-        </div>
+          Post
+        </p>
       </div>
     </div>
   );
