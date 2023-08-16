@@ -4,12 +4,7 @@ import { formatDistanceToNowStrict } from "date-fns";
 import { useRouter } from "next/router";
 import React, { useCallback, useMemo } from "react";
 import Avatar from "../Avatar";
-import {
-  BiCommentDetail,
-  BiHeart,
-  BiShareAlt,
-  BiSolidHeart,
-} from "react-icons/bi";
+import { BiCommentDetail, BiHeart, BiSolidHeart } from "react-icons/bi";
 import useLike from "@/hooks/useLike";
 
 interface PostItemProps {
@@ -95,23 +90,6 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
           <div className="text-white mt-4 break-all">{data.body}</div>
           <div className=" flex flex-row items-center mt-3 gap-10 ">
             <div
-              onClick={onLike}
-              className="
-            flex 
-            flex-row
-            items-center
-            text-stone-500
-            gap-2
-            cursor-pointer
-            transition
-            hover:text-red-500
-            "
-            >
-              <LikeIcon size={20} color={hasLiked ? "#EF4444" : ""} />
-              <p className="text-xs">{data.likeIds.length}</p>
-            </div>
-
-            <div
               className="
             flex 
             flex-row
@@ -128,6 +106,7 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
             </div>
 
             <div
+              onClick={onLike}
               className="
             flex 
             flex-row
@@ -136,10 +115,11 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
             gap-2
             cursor-pointer
             transition
-            hover:text-green-500
+            hover:text-red-500
             "
             >
-              <BiShareAlt size={20} />
+              <LikeIcon size={20} color={hasLiked ? "#EF4444" : ""} />
+              <p className="text-xs">{data.likeIds.length}</p>
             </div>
           </div>
         </div>
